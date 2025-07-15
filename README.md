@@ -19,8 +19,7 @@ Current status (*as of 7/15/25*):
 ## Usage
 
 > [!NOTE]  
-> The current collection will work with the `FinalBurn Neo` core and all arcade games marked as `vertical` from the Arcade Database @ [http://adb.arcadeitalia.net/]
-(adb.arcadeitalia.net).  Adding additional core support and game support is totally possible but will rely on contributions.  If you are interested in helping out please check the Contribute section below.
+> The current collection will work with the `FinalBurn Neo` core and all arcade games marked as `vertical` from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net).  Adding additional core support and game support is totally possible but will rely on contributions.  If you are interested in helping out please check the Contribute section below.
 
 1. Download the collection by clicking the `<> Code` button above and selecting `Download ZIP` in the menu that displays.
 2. Unzip the file.
@@ -36,5 +35,4 @@ TBA
 ## Credits
 
 - Arcade marquee images sourced from [Screenscraper.fr](Screenscraper.fr) and [Launchbox GamesDB](https://gamesdb.launchbox-app.com/)
-- Arcade game names sourced from the Arcade Database @ [http://adb.arcadeitalia.net/]
-(adb.arcadeitalia.net).
+- Arcade game names sourced from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net).
