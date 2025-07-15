@@ -12,8 +12,7 @@ The goal is for this collection to be easy to drop-in to an existing RetroArch f
 Current status (*as of 7/15/25*):
 
 - Folder Structure: Defined the foundational structure and added support for the FinalBurn Neo core as a first test (more details described in the Usage section below)
-- Arcade Configuration: Contains a full list of cfg files for all games marked as "vertical" from the Arcade Database @ [http://adb.arcadeitalia.net/]
-(adb.arcadeitalia.net)
+- Arcade Configuration: Contains a full list of cfg files for all games marked as "vertical" from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net)
 - Arcade Overlay Images: Added a default image named `_vertical-overlay.png` as a foundation for all existing games so that they will display something until more game specific images are created.  Some game specific images have been created to test how game specific images will work.
 
 ## Usage
