@@ -6,12 +6,13 @@ A collection of overlays to be used with RetroArch created specifically for the 
 
 There are 2 initial goals for this collection:
 
-1. Easy to drop-in to an existing RetroArch folder without additional configuration.
-2. Provide custom overlay images that fill the unique vertical 480x800 screen of the Zero 40
+1. Custom overlay images that fill the unique vertical 480x800 screen of the Zero 40
+2. An easy to drop-in set of files for RetroArch without additional configuration.
 
 ### What's included currently:
-- Pre-configured overlays for vertical arcade games sized for the 480x800 screen on the Zero 40.
-- Configuration files for the FinalBurn Neo core that display an overlay when a vertical arcade game is loaded.
+- Game specific overlays for 400+ vertical arcade games
+- A default overlay for any vertical game without a game specific image
+- No manual configuration needed per game
 
 > [!NOTE]  
 > The current collection will work with the `FinalBurn Neo` core and any arcade games marked as `vertical` from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net).  Adding additional core/game support is possible and will rely on contributions.  If you are interested in helping out please check the Contribute section below.
@@ -19,10 +20,10 @@ There are 2 initial goals for this collection:
 ## Usage
 
 ### Before You Start
-- RetroArch should be installed on your Android device
-- The FinalBurn Neo core should be installed
-- Your games should follow the standard mame naming convention
-- You should have access to device storage to manage files
+- RetroArch installed on your Android device
+- FinalBurn Neo core installed in RetroArch  
+- Games following standard MAME naming convention
+- Access to device storage for file management
 
 ### Steps
 
@@ -30,64 +31,75 @@ There are 2 initial goals for this collection:
 2. Unzip the file
 3. **To install overlay files:**
    - Navigate to `/storage/emulated/0/RetroArch/` on your device
-   - Copy the `overlays` folder from the download here.
+   - Copy the `overlays` folder from the download to that directory
    - Note: If you have an existing `overlays` folder then back it up first and try to merge the folder from the download instead. That should preserve any other overlays you already have in place but please check just in case.
 4. **To install core configuration files:**
    - Navigate to `/storage/emulated/0/RetroArch/config/`
-   - Copy the `FinalBurn Neo` folder from the download here
+   - Copy the `FinalBurn Neo` folder from the download to that directory
    - Note: if you have an existing `config/FinalBurn Neo` folder then back it up first and try to merge the folder from the download instead.  If you have created any specific game or core overrides please make sure to merge them with the corresponding cfg file contained in this collection or you will lose your specific changes.
 
-### Verify Setup
+### Verify
 1. Open RetroArch
 2. Load a vertical arcade game with FinalBurn Neo
-3. You should see the overlay appear automatically
-4. If not, check Settings > On-Screen Display > On-Screen Overlay
+3. The overlay should appear automatically
+4. **If an overlay doesn't appear**:
+   - In RetroArch Go to Settings > On-Screen Display > On-Screen Overlay
+   - Check if "Overlay Preset" shows your game name
+   - If that setting is empty: Review the installation steps above again and check that all your paths match
+   - If it shows the name of your game: Open the config file and check the path to the overlay file to make sure its pointing to the right location
 
 ## Contribute
 
-This collection relies on contributions to add coverage for games, systems and cores. Its open for anyone to contribute so based on what you would like to help with please follow along with one of the options below.
+This collection relies on contributions to add coverage for games, systems and cores. It's open for anyone to contribute so based on what you would like to help with please follow along with one of the options below.
 
 ### Start here
 
-These are the foundations to understand for all types of contribution:
+RetroArch uses two sets of files for overlays:
 
-1. Overlay's are made from 2 files and stored in a `RetroArch/overlays/{system}/` directory
-	- For example: the game Dig Dug has 2 files in the `/RetroArch/overlays/arcade/` directory:
-		- `digdug.cfg`: a simple set of instructions that tell RetroArch how the overlay will display.  See [these instructions](https://docs.libretro.com/development/retroarch/input/overlay/#configuration) for details about what can go in this file.
-		- `digdug.png`: a transparent png for the overlay image that will display when the overlay is loaded by RetroArch. Overlay images should be transparent pngs and sized at 480x800 to fit the Zero 40 screen resolution and aspect ratio.
-2. RetroArch determines which overlay to load for a given game through a `{name}.cfg` file located in the `/RetroArch/config/{core}/` directory where...
-	- `{core}`: should match the name that RetroArch assigns to the core itself. For example if you are playing a game through the FinalBurn Neo core then the directory RetroArch will look in for cfg files is `/RetroArch/config/FinalBurn Neo/`
-		- using Dig Dug as an example and assuming you are playing it using the FinalBurn Neo core; the cfg file would be located at: `/RetroArch/config/FinalBurn Neo/digdug.cfg`
-	- `{name}.cfg`: can either be the name of a specific game if you want to load a game specific overlay or the name of the core you are using to load a global overlay for all games for a given core.
-		- This cfg file simply needs to contain a pointer to the overlay cfg file you want to load: `input_overlay = "/storage/emulated/0/RetroArch/overlays/{system}/{name}.cfg"`
-		- For example if you want to load a game specific overlay for Dig Dug when its opened by RetroArch this file would contain: `input_overlay = "/storage/emulated/0/RetroArch/overlays/arcade/digdug.cfg"` 
+**Overlay Files** (located in the `/RetroArch/overlays/` folder):
 
-To contribute an update/change to this collection please fork this repo, make your change and then open a Pull Request with your change against this repo.
+- `{name}.cfg` - A configuration file telling RetroArch how to display the overlay
+- `{name}.png` - The actual overlay image (480x800 transparent PNG)
 
-### Contribute a Core
+**Game/Core Configurations** (located in a `/RetroArch/config/{core}/` folder):
 
-- RetroArch handles the automatic display of overlays through cfg files that organized by Core in its `/config/` directory (you can see an example in this collection already for the FinalBurn Neo core).
-- And inside a core directory RetroArch will use game cfg files first and fall back to a core cfg file if a game cfg does not exist.  
-	 - For example if the game Dig Dug is loaded through the FinalBurn Neo core...
-	 - RetroArch will first look to see if `digdug.cfg` exists in `/RetroArch/config/FinalBurn Neo/`.  
-	 - If  `digdug.cfg` exists then it will look in that cfg for an `input_overlay` setting and then try to load the overlay referenced for it.
-	 - If `digdug.cfg` does not exist then RetroArch will look for a `FinalBurn Neo.cfg` file in that same directory.  If an `input_overlay` setting exists in that file then it will try to load the overlay referenced for it.
-- This structure enables us to create per game overlays or system level overlays that apply to all games for a given system.  So please keep this in mind when adding a core
+- `{core}`: should match the name that RetroArch assigns to the core itself. For example if you are playing a game through the FinalBurn Neo core then the directory RetroArch will look in for cfg files is `/RetroArch/config/FinalBurn Neo/`
+- `{name}.cfg` - This cfg file simply needs to contain a pointer to the overlay cfg file you want to load: `input_overlay = "/storage/emulated/0/RetroArch/overlays/{system}/{name}.cfg"`
+- You can either create a game specific or a global core configuration in this folder
 
-### Contribute a System
+**Loading Priority:**
 
-TBA
+1. Game-specific config (if exists)
+2. Core-wide config (fallback)
+
+To contribute an update/change to this collection please fork this repo, make your change and then open a pull request with your change to this repo.
 
 ### Contribute a Game
 
-TBA
+To contribute a game overlay please check the following commit for an example of what is required:
+[Game Contribution Example](https://github.com/anthonycaccese/magicx-zero-40-retroarch-overlays/commit/bd854d3e58d5c0dda3666652c240d791e478117b)
+
+In the example you'll see the following:
+
+1. A file called `{gamename}.cfg` in the `RetroArch/config/FinalBurn Neo/` directory which contains a pointer to the overlay cfg to load
+2. A file called `{gamename}.cfg` in the `RetroArch/overlays/arcade/` directory which contains a simple set of instructions for how the overlay should render in RetroArch
+3. A file called `{gamename}.png` which is the image you've created for the overlay.  Please make sure it's 480x800 in size and a transparent PNG.
+
+Once you have the required files created please submit a pull request to this repo with your changes.
+
+### Contribute a Core
+
+Support for additional RetroArch cores can be added. Check back or open an issue if you'd like to help add support for a specific core.
+
+### Contribute a System  
+
+Console and handheld system support is possible. Check back or open an issue if you'd like to help add support for a specific system.
 
 ## Current status (*as of 7/15/25*):
 
 - **Folder Structure**: Defined the foundational folder structure and added support for the FinalBurn Neo core as a first test (more details described in the Usage section below)
 - **Arcade Configuration**: Contains a full list of cfg files for all games marked as "vertical" from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net)
 - **Arcade Overlay Images**: Added a default image named `_vertical-overlay.png` as a foundation for all vertical arcade games so that they will display something until more game specific images are created.  Over 400 game specific images have also been created to test how game specific images will work.
-
 
 ## Credits
 
