@@ -13,14 +13,15 @@ There are 2 initial goals for this collection:
 - Pre-configured overlays for vertical arcade games sized for the 480x800 screen on the Zero 40.
 - Configuration files for the FinalBurn Neo core that display an overlay when a vertical arcade game is loaded.
 
-## Usage
-
 > [!NOTE]  
-> The current collection will work with the `FinalBurn Neo` core and all arcade games marked as `vertical` from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net).  Adding additional core/game support is totally possible and will rely on contributions.  If you are interested in helping out please check the Contribute section below.
+> The current collection will work with the `FinalBurn Neo` core and any arcade games marked as `vertical` from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net).  Adding additional core/game support is possible and will rely on contributions.  If you are interested in helping out please check the Contribute section below.
+
+## Usage
 
 ### Before You Start
 - RetroArch should be installed on your Android device
 - The FinalBurn Neo core should be installed
+- Your games should follow the standard mame naming convention
 - You should have access to device storage to manage files
 
 ### Steps
@@ -85,7 +86,7 @@ TBA
 
 - **Folder Structure**: Defined the foundational folder structure and added support for the FinalBurn Neo core as a first test (more details described in the Usage section below)
 - **Arcade Configuration**: Contains a full list of cfg files for all games marked as "vertical" from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net)
-- **Arcade Overlay Images**: Added a default image named `_vertical-overlay.png` as a foundation for all vertical arcade games so that they will display something until more game specific images are created.  Some game specific images have also been created to test how game specific images will work.
+- **Arcade Overlay Images**: Added a default image named `_vertical-overlay.png` as a foundation for all vertical arcade games so that they will display something until more game specific images are created.  Over 400 game specific images have also been created to test how game specific images will work.
 
 
 ## Credits
