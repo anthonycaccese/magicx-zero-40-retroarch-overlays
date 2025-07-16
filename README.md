@@ -9,28 +9,38 @@ There are 2 initial goals for this collection:
 1. Easy to drop-in to an existing RetroArch folder without additional configuration.
 2. Provide custom overlay images that fill the unique vertical 480x800 screen of the Zero 40
 
----
-
-> [!NOTE]  
-> This collection currently only includes vertical ("tate") arcade games but if there is interest in helping to contribute it could be extended support horitzontal aracde games, consoles and handheld systems too.
-
-Current status (*as of 7/15/25*):
-
-- **Folder Structure**: Defined the foundational folder structure and added support for the FinalBurn Neo core as a first test (more details described in the Usage section below)
-- **Arcade Configuration**: Contains a full list of cfg files for all games marked as "vertical" from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net)
-- **Arcade Overlay Images**: Added a default image named `_vertical-overlay.png` as a foundation for all vertical arcade games so that they will display something until more game specific images are created.  Some game specific images have also been created to test how game specific images will work.
+### What's included currently:
+- Pre-configured overlays for vertical arcade games sized for the 480x800 screen on the Zero 40.
+- Configuration files for the FinalBurn Neo core that display an overlay when a vertical arcade game is loaded.
 
 ## Usage
 
 > [!NOTE]  
 > The current collection will work with the `FinalBurn Neo` core and all arcade games marked as `vertical` from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net).  Adding additional core/game support is totally possible and will rely on contributions.  If you are interested in helping out please check the Contribute section below.
 
-1. Download the collection by clicking the `<> Code` button above and selecting `Download ZIP` in the menu that displays.
-2. Unzip the file.
-3. Copy the `overlays` folder to your RetroArch folder on your android device located at `/storage/emulated/0/RetroArch/`.
-	- Note: if you have an existing overlays folder we recommend backing it up and then trying to merge the contents of this folder with your existing one.  That should preserve any other overlays you have in place but please check just in case.
-4. Copy the `config/FinalBurn Neo` folder into your RetroArch/config folder on your android device located at `/storage/emulated/0/RetroArch/config`
-	- Note: if you have an existing `config/FinalBurn Neo` folder we recommend backing it up and then trying to merge the contents of this folder with your existing one.  If you have created any specific game or core overrides please make sure to merge them with the corresponding cfg file contained in this collection or you will lose your specific changes.
+### Before You Start
+- RetroArch should be installed on your Android device
+- The FinalBurn Neo core should be installed
+- You should have access to device storage to manage files
+
+### Steps
+
+1. Download the collection by clicking the `<> Code` button above and selecting `Download ZIP` in the menu that displays
+2. Unzip the file
+3. **To install overlay files:**
+   - Navigate to `/storage/emulated/0/RetroArch/` on your device
+   - Copy the `overlays` folder from the download here.
+   - Note: If you have an existing `overlays` folder then back it up first and try to merge the folder from the download instead. That should preserve any other overlays you already have in place but please check just in case.
+4. **To install core configuration files:**
+   - Navigate to `/storage/emulated/0/RetroArch/config/`
+   - Copy the `FinalBurn Neo` folder from the download here
+   - Note: if you have an existing `config/FinalBurn Neo` folder then back it up first and try to merge the folder from the download instead.  If you have created any specific game or core overrides please make sure to merge them with the corresponding cfg file contained in this collection or you will lose your specific changes.
+
+### Verify Setup
+1. Open RetroArch
+2. Load a vertical arcade game with FinalBurn Neo
+3. You should see the overlay appear automatically
+4. If not, check Settings > On-Screen Display > On-Screen Overlay
 
 ## Contribute
 
@@ -70,6 +80,13 @@ TBA
 ### Contribute a Game
 
 TBA
+
+## Current status (*as of 7/15/25*):
+
+- **Folder Structure**: Defined the foundational folder structure and added support for the FinalBurn Neo core as a first test (more details described in the Usage section below)
+- **Arcade Configuration**: Contains a full list of cfg files for all games marked as "vertical" from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net)
+- **Arcade Overlay Images**: Added a default image named `_vertical-overlay.png` as a foundation for all vertical arcade games so that they will display something until more game specific images are created.  Some game specific images have also been created to test how game specific images will work.
+
 
 ## Credits
 
