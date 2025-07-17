@@ -16,7 +16,7 @@ There are 2 initial goals for this collection:
 - Video Demo: https://www.youtube.com/embed/ADeqTLlpRzY
 
 > [!NOTE]  
-> The current collection will work with the `FinalBurn Neo` core and any arcade games marked as `vertical` from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net).  Adding additional core/game support is possible and will rely on contributions.  If you are interested in helping out please check the Contribute section below.
+> The current collection will work with the `FinalBurn Neo` core and any arcade games marked as `vertical` from the Arcade Database @ [adb.arcadeitalia.net](http://adb.arcadeitalia.net).  Adding additional core/game support is possible and will rely on contributions.  If you are interested in helping out please check the Contribute section below.
 
 ## Usage
 
@@ -99,13 +99,13 @@ Console and handheld system support is possible. Check back or open an issue if 
 ## Current status (*as of 7/15/25*):
 
 - **Folder Structure**: Defined the foundational folder structure and added support for the FinalBurn Neo core as a first test (more details described in the Usage section below)
-- **Arcade Configuration**: Contains a full list of cfg files for all games marked as "vertical" from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net)
+- **Arcade Configuration**: Contains a full list of cfg files for all games marked as "vertical" from the Arcade Database @ [adb.arcadeitalia.net](http://adb.arcadeitalia.net)
 - **Arcade Overlay Images**: Added a default image named `_vertical-overlay.png` as a foundation for all vertical arcade games so that they will display something until more game specific images are created.  Over 400 game specific images have also been created to test how game specific images will work.
 
 ## Credits
 
-- Arcade marquee images sourced from [Screenscraper.fr](Screenscraper.fr) and [Launchbox GamesDB](https://gamesdb.launchbox-app.com/)
-- Arcade game names sourced from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net).
+- Arcade marquee images sourced from [Screenscraper.fr](https://screenscraper.fr) and [Launchbox GamesDB](https://gamesdb.launchbox-app.com/)
+- Arcade game names sourced from the Arcade Database @ [adb.arcadeitalia.net](http://adb.arcadeitalia.net).
 
 ## License
 Creative Commons CC-BY-NC-SA - https://creativecommons.org/licenses/by-nc-sa/2.0/
