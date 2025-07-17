@@ -13,6 +13,7 @@ There are 2 initial goals for this collection:
 - Game specific overlays for 400+ vertical arcade games
 - A default overlay for any vertical game without a game specific image
 - No manual configuration needed per game
+- Video Demo: https://www.youtube.com/embed/ADeqTLlpRzY
 
 > [!NOTE]  
 > The current collection will work with the `FinalBurn Neo` core and any arcade games marked as `vertical` from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net).  Adding additional core/game support is possible and will rely on contributions.  If you are interested in helping out please check the Contribute section below.
