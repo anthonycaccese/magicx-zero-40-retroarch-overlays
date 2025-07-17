@@ -106,3 +106,7 @@ Console and handheld system support is possible. Check back or open an issue if 
 
 - Arcade marquee images sourced from [Screenscraper.fr](Screenscraper.fr) and [Launchbox GamesDB](https://gamesdb.launchbox-app.com/)
 - Arcade game names sourced from the Arcade Database @ [http://adb.arcadeitalia.net/](adb.arcadeitalia.net).
+
+## License
+Creative Commons CC-BY-NC-SA - https://creativecommons.org/licenses/by-nc-sa/2.0/
+You are free to share and adapt this as long as you provide attribution back to this repo and all of the above credits. Please also share any updates you make under the same license terms.
